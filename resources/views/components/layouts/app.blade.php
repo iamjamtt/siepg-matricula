@@ -7,11 +7,10 @@
     data-sidebar-size="lg"
     data-sidebar-image="none"
     data-preloader="disable"
-    data-theme="creative"
-    data-theme-colors="blue"
+    data-theme="material"
+    data-theme-colors="green"
     data-sidebar-visibility="show"
     data-layout-style="default"
-    data-bs-theme="light"
     data-layout-width="fluid"
     data-layout-position="fixed"
     data-body-image="none"
@@ -66,6 +65,24 @@
 </head>
 
 <body>
+    <script>
+        var defaultThemeMode = 'light';
+        var themeMode;
+
+        if (document.documentElement) {
+            if (document.documentElement.hasAttribute('data-bs-theme')) {
+                themeMode = document.documentElement.getAttribute('data-bs-theme');
+            } else {
+                if (localStorage.getItem('data-bs-theme') !== null) {
+                    themeMode = localStorage.getItem('data-bs-theme');
+                } else {
+                    themeMode = defaultThemeMode;
+                }
+            }
+            document.documentElement.setAttribute('data-bs-theme', themeMode);
+        }
+    </script>
+
     <!-- Begin page -->
     <div id="layout-wrapper">
         <!-- Header -->
@@ -124,9 +141,15 @@
                         <div class="ms-1 header-item d-none d-sm-flex">
                             <button
                                 type="button"
-                                class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle light-dark-mode"
+                                class="btn btn-icon btn-topbar material-shadow-none btn-ghost-secondary rounded-circle custom-toggle"
+                                data-bs-toggle="button"
                             >
-                                <i class="bx bx-moon fs-22"></i>
+                                <span class="icon-on" onclick="themeToggle('dark')">
+                                    <i class="bx bx-moon fs-22"></i>
+                                </span>
+                                <span class="icon-off" onclick="themeToggle('light')">
+                                    <i class="bx bx-sun fs-22"></i>
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -179,17 +202,17 @@
                             alt="Header Avatar"
                         />
                         <span class="text-start">
-                            <span class="d-block fw-medium sidebar-user-name-text">Anna Adame</span>
+                            <span class="d-block fw-medium sidebar-user-name-text">Jamt Mendoza</span>
                             <span class="d-block fs-14 sidebar-user-name-sub-text">
                                 <i class="ri ri-circle-fill fs-10 text-success align-baseline"></i>
-                                <span class="align-middle">Online</span>
+                                <span class="align-middle">En linea</span>
                             </span>
                         </span>
                     </span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <h6 class="dropdown-header">Welcome Anna!</h6>
+                    <h6 class="dropdown-header">Bienvenido Jamt!</h6>
                     <a class="dropdown-item" href="">
                         <i class="ri-logout-circle-line fs-16 align-middle me-1"></i>
                         <span class="align-middle">
@@ -341,6 +364,18 @@
 
     <!-- App js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
+
+    <script>
+        function themeToggle(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-bs-theme', 'dark');
+                localStorage.setItem('data-bs-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-bs-theme', 'light');
+                localStorage.setItem('data-bs-theme', 'light');
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -7,7 +7,7 @@
     data-sidebar-size="lg"
     data-sidebar-image="none"
     data-preloader="disable"
-    data-theme="minimal"
+    data-theme="creative"
     data-theme-colors="blue"
     data-sidebar-visibility="show"
     data-layout-style="default"
@@ -68,6 +68,7 @@
 <body>
     <!-- Begin page -->
     <div id="layout-wrapper">
+        <!-- Header -->
         <header id="page-topbar">
             <div class="layout-width">
                 <div class="navbar-header">
@@ -162,8 +163,15 @@
             </div>
 
             <!-- Card User -->
-            <div class="sidebar-user m-1 rounded">
-                <div class="btn material-shadow-none" id="page-header-user-dropdown" style="cursor: default;">
+            <div class="dropdown sidebar-user m-1 rounded">
+                <button
+                    type="button"
+                    class="btn material-shadow-none"
+                    id="page-header-user-dropdown"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
                     <span class="d-flex align-items-center gap-2">
                         <img
                             class="rounded header-profile-user"
@@ -178,6 +186,16 @@
                             </span>
                         </span>
                     </span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <!-- item-->
+                    <h6 class="dropdown-header">Welcome Anna!</h6>
+                    <a class="dropdown-item" href="">
+                        <i class="ri-logout-circle-line fs-16 align-middle me-1"></i>
+                        <span class="align-middle">
+                            Cerrar Sesión
+                        </span>
+                    </a>
                 </div>
             </div>
 

@@ -217,7 +217,7 @@
                         <li class="nav-item">
                             <a
                                 href="{{ route('inicio.index') }}"
-                                class="nav-link menu-link {{ request()->routeIs('inicio.index') ? 'active bg-primary-subtle' : '' }}"
+                                class="nav-link menu-link {{ request()->routeIs('inicio.index') ? 'active bg-primary' : '' }}"
                             >
                                 <i class="ri-home-6-line"></i>
                                 <span>Inicio</span>

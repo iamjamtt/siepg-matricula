@@ -169,7 +169,7 @@
             </div>
 
             <!-- Card User -->
-            <div class="dropdown sidebar-user m-1 rounded">
+            <div class="dropdown sidebar-user">
                 <button
                     type="button"
                     class="btn material-shadow-none"
@@ -180,7 +180,7 @@
                 >
                     <span class="d-flex align-items-center gap-2">
                         <img
-                            class="rounded header-profile-user"
+                            class="rounded header-profile-user ms-1"
                             src="assets/images/users/avatar-1.jpg"
                             alt="Header Avatar"
                         />

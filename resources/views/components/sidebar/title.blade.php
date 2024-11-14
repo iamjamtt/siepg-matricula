@@ -2,7 +2,7 @@
     'icon' => null
 ])
 
-<li class="menu-title">
+<li {{ $attributes->merge(['class' => 'menu-title']) }}>
     @if ($icon)
         <i class="{{ $icon }}"></i>
     @endif

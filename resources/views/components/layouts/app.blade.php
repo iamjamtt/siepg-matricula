@@ -217,7 +217,7 @@
                     icon="ri-home-6-line"
                 />
 
-                <x-sidebar.title icon="ri-more-fill">
+                <x-sidebar.title icon="ri-more-fill" class="mt-2">
                     Otros
                 </x-sidebar.title>
                 <x-sidebar.item

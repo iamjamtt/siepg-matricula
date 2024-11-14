@@ -212,7 +212,7 @@
                 </x-sidebar.title>
                 <x-sidebar.item
                     name="Inicio"
-                    route="#"
+                    :route="route('inicio.index')"
                     routeIs="inicio.index"
                     icon="ri-home-6-line"
                 />

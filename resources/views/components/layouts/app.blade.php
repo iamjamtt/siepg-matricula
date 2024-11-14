@@ -7,7 +7,7 @@
     data-sidebar-size="lg"
     data-sidebar-image="none"
     data-preloader="disable"
-    data-theme="material"
+    data-theme="modern"
     data-theme-colors="green"
     data-sidebar-visibility="show"
     data-layout-style="default"
@@ -92,21 +92,12 @@
                     <div class="d-flex">
                         <!-- LOGO -->
                         <div class="navbar-brand-box horizontal-logo">
-                            <a href="index.html" class="logo logo-dark">
+                            <a href="{{ route('inicio.index') }}" class="logo">
                                 <span class="logo-sm">
-                                    <img src="assets/images/logo-sm.png" alt="" height="22" />
+                                    <img src="{{ asset('files/imagenes/logo-epg.png') }}" alt="" height="35" />
                                 </span>
                                 <span class="logo-lg">
-                                    <img src="assets/images/logo-dark.png" alt="" height="17" />
-                                </span>
-                            </a>
-
-                            <a href="index.html" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="assets/images/logo-sm.png" alt="" height="22" />
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="assets/images/logo-light.png" alt="" height="17" />
+                                    <img src="{{ asset('files/imagenes/logo-epg.png') }}" alt="" height="35" />
                                 </span>
                             </a>
                         </div>
@@ -137,7 +128,7 @@
                                 <i class="bx bx-fullscreen fs-22"></i>
                             </button>
                         </div>
-
+                        <!-- Theme Toggle -->
                         <div class="ms-1 header-item d-none d-sm-flex">
                             <button
                                 type="button"
@@ -162,21 +153,13 @@
             <!-- LOGO -->
             <div class="navbar-brand-box">
                 <!-- Dark Logo-->
-                <a href="index.html" class="logo logo-dark">
+                <a href="{{ route('inicio.index') }}" class="logo">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22" />
+                        <img src="{{ asset('files/imagenes/logo-epg.png') }}" alt="" height="35" />
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="17" />
-                    </span>
-                </a>
-                <!-- Light Logo-->
-                <a href="index.html" class="logo logo-light">
-                    <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22" />
-                    </span>
-                    <span class="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="17" />
+                        <img src="{{ asset('files/imagenes/logo-epg.png') }}" alt="" height="35" />
+                        <span class="text-white fs-2 fw-bold align-middle ms-1">EPG</span>
                     </span>
                 </a>
                 <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -228,13 +211,13 @@
                     <div id="two-column-menu"></div>
                     <ul class="navbar-nav" id="navbar-nav">
                         <li class="menu-title">
-                            <span data-key="t-menu">Menu</span>
+                            <span>Menu</span>
                         </li>
 
                         <li class="nav-item">
                             <a
                                 href="{{ route('inicio.index') }}"
-                                class="nav-link menu-link {{ request()->routeIs('inicio.index') ? 'active' : '' }}"
+                                class="nav-link menu-link {{ request()->routeIs('inicio.index') ? 'active bg-primary-subtle' : '' }}"
                             >
                                 <i class="ri-home-6-line"></i>
                                 <span>Inicio</span>

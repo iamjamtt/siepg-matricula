@@ -206,69 +206,46 @@
             </div>
 
             <!-- Sidebar -->
-            <div id="scrollbar">
-                <div class="container-fluid">
-                    <div id="two-column-menu"></div>
-                    <ul class="navbar-nav" id="navbar-nav">
-                        <li class="menu-title">
-                            <span>Menu</span>
-                        </li>
+            <x-sidebar>
+                <x-sidebar.title>
+                    Menu
+                </x-sidebar.title>
+                <x-sidebar.item
+                    name="Inicio"
+                    route="#"
+                    routeIs="inicio.index"
+                    icon="ri-home-6-line"
+                />
 
-                        <li class="nav-item">
-                            <a
-                                href="{{ route('inicio.index') }}"
-                                class="nav-link menu-link {{ request()->routeIs('inicio.index') ? 'active bg-primary' : '' }}"
-                            >
-                                <i class="ri-home-6-line"></i>
-                                <span>Inicio</span>
-                            </a>
-                        </li>
+                <x-sidebar.title icon="ri-more-fill">
+                    Otros
+                </x-sidebar.title>
+                <x-sidebar.item
+                    name="Matricula"
+                    route="#"
+                    routeIs="matricula.index"
+                    icon="ri-folder-5-line"
+                />
 
-                        <li class="menu-title">
-                            <i class="ri-more-fill"></i>
-                            <span>Otros</span>
-                        </li>
-
-                        <li class="nav-item">
-                            <a
-                                href="#"
-                                class="nav-link menu-link"
-                            >
-                                <i class="ri-folder-5-line"></i>
-                                <span>Matriculas</span>
-                            </a>
-                        </li>
-
-                        {{-- <li class="nav-item">
-                            <a
-                                class="nav-link menu-link"
-                                href="#sidebarForms" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="sidebarForms"
-                            >
-                                <i class="ri-file-list-3-line"></i>
-                                <span>Forms</span>
-                            </a>
-                            <div class="collapse menu-dropdown" id="sidebarForms">
-                                <ul class="nav nav-sm flex-column">
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            Basic Elements
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            Form Select
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li> --}}
-                    </ul>
-                </div>
-                <!-- Sidebar -->
-            </div>
-
-            <div class="sidebar-background"></div>
+                {{-- <x-sidebar.item
+                    name="Matricula"
+                    icon="ri-folder-5-line"
+                    routeIs="inicio.*"
+                >
+                    <x-sidebar.subItem
+                        :route="route('inicio.index')"
+                        routeIs="inicio.index"
+                    >
+                        Inicio
+                    </x-sidebar.subItem>
+                    <x-sidebar.subItem
+                        route="#"
+                        routeIs="inicio.show"
+                    >
+                        Otros
+                    </x-sidebar.subItem>
+                </x-sidebar.item> --}}
+            </x-sidebar>
         </div>
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->

@@ -50,6 +50,9 @@
     <!-- custom Css-->
     <link href="{{ asset('assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 
+    <!-- Sweet Alert css-->
+    <link href="{{ asset('assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+
     <!-- Font Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -327,8 +330,14 @@
     <!-- App js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
 
-    <!-- Alpine Js -->
-    {{-- <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+    <!-- JS Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
+    <!-- Sweet Alerts js -->
+    <script src="{{ asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 
     <script>
         function themeToggle(theme) {
@@ -340,6 +349,70 @@
                 localStorage.setItem('data-bs-theme', 'light');
             }
         }
+
+        document.addEventListener('livewire:navigated', () => {
+            // event listener for modal
+            window.addEventListener('modal', event => {
+                $(event.detail.modal).modal(event.detail.action)
+            })
+
+            // event listener for confetti
+            window.addEventListener('confetti', event => {
+                const jsConfetti = new JSConfetti()
+                jsConfetti.addConfetti()
+            })
+
+            // event listener for toast
+            window.addEventListener('toast', event => {
+                var colors = {
+                    'success': '#00bd9d',
+                    'error': '#f06548',
+                    'warning': '#ffbc0a',
+                    'info': '#32ccff',
+                }
+                Toastify({
+                    text: event.detail.mensaje,
+                    className: event.detail.tipo,
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "bottom", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        padding: "20px",
+                        borderRadius: "5px",
+                        backgroundColor: colors[event.detail.tipo],
+                    }
+                }).showToast();
+            })
+
+            // event listener for confirm sweetalert
+            window.addEventListener('confirm', event => {
+                var colors = {
+                    'success': '#00bd9d',
+                    'error': '#f06548',
+                    'warning': '#ffbc0a',
+                    'info': '#32ccff',
+                    'question': '#25a0e2',
+                }
+                Swal.fire({
+                    title: event.detail.titulo,
+                    text: event.detail.mensaje,
+                    icon: event.detail.tipo,
+                    iconColor: colors[event.detail.tipo],
+                    showCancelButton: event.detail.mostrarBotonCancelar,
+                    confirmButtonColor: colors[event.detail.tipo],
+                    cancelButtonColor: colors['error'],
+                    confirmButtonText: 'Aceptar',
+                    cancelButtonText: 'Cancelar',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Livewire.dispatch(event.detail.metodo, event.detail.parametros)
+                    }
+                })
+            })
+        });
     </script>
 </body>
 

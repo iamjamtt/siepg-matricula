@@ -28,7 +28,7 @@
                 <p class="text-center text-muted mb-5">
                     Bienvenido al sistema de matricula de la Escuela de Posgrado de la Universidad Nacional de Ucayali.
                 </p>
-                <form class="row g-3">
+                <form class="row g-3" wire:submit="ingresar">
                     <div class="col-12">
                         <label for="correoElectronico" class="form-label">
                             Correo Electrónico

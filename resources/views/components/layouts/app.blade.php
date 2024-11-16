@@ -172,85 +172,10 @@
             </div>
 
             <!-- Card User -->
-            <div class="dropdown sidebar-user mb-2">
-                <button
-                    type="button"
-                    class="btn material-shadow-none"
-                    id="page-header-user-dropdown"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                >
-                    <span class="d-flex align-items-center gap-2">
-                        <img
-                            class="rounded header-profile-user ms-1"
-                            src="assets/images/users/avatar-1.jpg"
-                            alt="Header Avatar"
-                        />
-                        <span class="text-start">
-                            <span class="d-block fw-medium sidebar-user-name-text">Jamt Mendoza</span>
-                            <span class="d-block fs-14 sidebar-user-name-sub-text">
-                                <i class="ri ri-shield-check-line fs-6 text-warning align-baseline"></i>
-                                <span class="align-middle text-warning">
-                                    Administrador
-                                </span>
-                            </span>
-                        </span>
-                    </span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end">
-                    <!-- item-->
-                    <h6 class="dropdown-header">Bienvenido Jamt!</h6>
-                    <a class="dropdown-item" href="">
-                        <i class="ri-logout-circle-line fs-16 align-middle me-1"></i>
-                        <span class="align-middle">
-                            Cerrar Sesión
-                        </span>
-                    </a>
-                </div>
-            </div>
+            <livewire:components.card-user.index />
 
             <!-- Sidebar -->
-            <x-sidebar>
-                <x-sidebar.title>
-                    Menu
-                </x-sidebar.title>
-                <x-sidebar.item
-                    name="Inicio"
-                    :route="route('inicio.index')"
-                    routeIs="inicio.index"
-                    icon="ri-home-6-line"
-                />
-
-                <x-sidebar.title icon="ri-more-fill" class="mt-2">
-                    Otros
-                </x-sidebar.title>
-                <x-sidebar.item
-                    name="Matricula"
-                    route="#"
-                    routeIs="matricula.index"
-                    icon="ri-folder-5-line"
-                />
-
-                {{-- <x-sidebar.item
-                    name="Matricula"
-                    icon="ri-folder-5-line"
-                    routeIs="inicio.*"
-                >
-                    <x-sidebar.subItem
-                        :route="route('inicio.index')"
-                        routeIs="inicio.index"
-                    >
-                        Inicio
-                    </x-sidebar.subItem>
-                    <x-sidebar.subItem
-                        route="#"
-                        routeIs="inicio.show"
-                    >
-                        Otros
-                    </x-sidebar.subItem>
-                </x-sidebar.item> --}}
-            </x-sidebar>
+            <livewire:components.sidebar.index />
         </div>
         <!-- Left Sidebar End -->
         <!-- Vertical Overlay-->

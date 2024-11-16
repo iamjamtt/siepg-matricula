@@ -33,7 +33,7 @@ class UsuarioEstudiante extends Authenticatable
     // obtener el avatar del usuario
     public function getAvatarAttribute()
     {
-        return 'https://ui-avatars.com/api/?name=' . $this->persona->primeros_nombres . '&color=fff&background=f97316&bold=true';
+        return 'https://ui-avatars.com/api/?name=' . $this->persona->primeros_nombres . '&color=fff&background=00bd9d&bold=true';
     }
 
     // protected static function boot() {

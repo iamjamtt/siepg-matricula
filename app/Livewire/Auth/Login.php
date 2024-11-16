@@ -18,6 +18,6 @@ class Login extends Component
 
     public function ingresar()
     {
-        //
+        sleep(2);
     }
 }

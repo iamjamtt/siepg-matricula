@@ -73,9 +73,19 @@
                     <div class="col-12 mt-5">
                         <button
                             type="submit"
-                            class="btn btn-primary w-100"
+                            class="btn btn-primary btn-load w-100"
+                            wire:loading.attr="disabled"
+                            wire:target="ingresar"
                         >
-                            Ingresar
+                            <span
+                                wire:loading
+                                wire:target="ingresar"
+                                class="spinner-border flex-shrink-0 align-middle"
+                                role="status"
+                            >
+                                <span class="visually-hidden">Loading...</span>
+                            </span>
+                            <span wire:loading.class="ms-1">Ingresar</span>
                         </button>
                     </div>
                 </form>

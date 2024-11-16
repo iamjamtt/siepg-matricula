@@ -78,62 +78,8 @@
     </script>
 
     <div style="height: 100vh;">
-        <div class="row align-items-center h-100 g-0">
-            <div class="col-xl-4 h-100">
-                <div class="h-100 w-100">
-                    <div class="d-flex flex-column h-100 justify-content-center align-items-center p-4 gap-4">
-                        <img
-                            src="{{ asset('files/imagenes/logo-epg.png') }}"
-                            alt="logo"
-                            height="120"
-                        />
-                        <div clsas="">
-                            <h4 class="text-center" style="font-weight: 700;">
-                                Escuela de Posgrado
-                            </h4>
-                            <p class="text-center text-muted px-md-3 px-xl-3 px-xxl-5 mb-0">
-                                Bienvenido al sistema de matricula de la Escuela de Posgrado de la Universidad Nacional de Ucayali.
-                            </p>
-                        </div>
-                        <div class="row g-3 w-100">
-                            <div class="col-xxl-10 col-xl-11 col-lg-7 col-md-7 col-sm-10 col-12 mx-auto">
-                                <label for="correoElectronico" class="form-label">
-                                    Correo Electrónico
-                                </label>
-                                <div class="form-icon">
-                                    <input
-                                        type="email"
-                                        class="form-control form-control-icon"
-                                        id="correoElectronico"
-                                        placeholder="example@unu.edu.pe"
-                                    >
-                                    <i class="ri-mail-line"></i>
-                                </div>
-                            </div>
-                            <div class="col-xxl-10 col-xl-11 col-lg-7 col-md-7 col-sm-10 col-12 mx-auto">
-                                <label for="contrasena" class="form-label">
-                                    Contraseña
-                                </label>
-                                <div class="form-icon">
-                                    <input
-                                        type="password"
-                                        class="form-control form-control-icon"
-                                        id="contrasena"
-                                        placeholder="********"
-                                    >
-                                    <i class="ri-lock-2-line"></i>
-                                </div>
-                            </div>
-                            <div class="col-xxl-10 col-xl-11 col-lg-7 col-md-7 col-sm-10 col-12 mx-auto mt-4">
-                                <button class="btn btn-primary w-100">
-                                    Iniciar Sesión
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-8 h-100 d-none d-xl-block">
+        <div class="row h-100 g-0">
+            <div class="col-12 col-lg-6 col-xl-7 d-none d-lg-block">
                 <div
                     class="h-100"
                     style="
@@ -142,6 +88,90 @@
                         background-position: center;
                     "
                 ></div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-5 d-flex flex-column justify-content-center">
+                <div
+                    class="container py-5 px-3 px-lg-5 d-flex flex-column justify-content-center align-items-center"
+                    style="max-width: 500px;"
+                >
+                    <div class="text-center mb-4">
+                        <img
+                            src="{{ asset('files/imagenes/logo-epg.png') }}"
+                            alt="logo"
+                            height="110"
+                        />
+                    </div>
+                    <h4 class="text-center mb-3" style="font-weight: 700;">
+                        Escuela de Posgrado
+                    </h4>
+                    <p class="text-center text-muted mb-5">
+                        Bienvenido al sistema de matricula de la Escuela de Posgrado de la Universidad Nacional de Ucayali.
+                    </p>
+                    <form class="row g-3">
+                        <div class="col-12">
+                            <label for="correoElectronico" class="form-label">
+                                Correo Electrónico
+                            </label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="correoElectronico"
+                                placeholder="example@unu.edu.pe"
+                            >
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="contrasena">
+                                Contraseña
+                            </label>
+                            <div
+                                class="input-group"
+                                x-data="{ modoPassword: 'password' }"
+                            >
+                                <input
+                                    x-bind:type="modoPassword"
+                                    class="form-control"
+                                    id="contrasena"
+                                    placeholder="********"
+                                >
+                                <div class="input-group-text">
+                                    <a class="link-secondary cursor-pointer"
+                                        x-on:click="modoPassword == 'password' ? modoPassword = 'text' : modoPassword = 'password'">
+                                        <svg x-show="modoPassword == 'password'" xmlns="http://www.w3.org/2000/svg" class="icon"
+                                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                                            <path
+                                                d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+                                        </svg>
+                                        <svg x-show="modoPassword == 'text'" x-cloak xmlns="http://www.w3.org/2000/svg"
+                                            class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                            stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
+                                            <path
+                                                d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
+                                            <path d="M3 3l18 18" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            @error('contrasena')
+                                <span class="form-text text-danger">
+                                    {{ $message }}
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="col-12 mt-5">
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100"
+                            >
+                                Ingresar
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -159,6 +189,9 @@
 
     <!-- App js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
+
+    <!-- Alpine Js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script>
         function themeToggle(theme) {

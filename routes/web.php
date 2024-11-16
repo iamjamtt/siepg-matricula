@@ -7,9 +7,10 @@ use App\Livewire\Inicio\Index as InicioIndex;
 
 Route::get('/login', AuthLogin::class)
     ->middleware('guest')
-    ->name('auth.login');
+    ->name('login');
 
 Route::get('/', InicioIndex::class)
+    ->middleware('auth')
     ->name('inicio.index');
 
 //

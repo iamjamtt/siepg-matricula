@@ -35,10 +35,16 @@
                         </label>
                         <input
                             type="email"
-                            class="form-control"
+                            class="form-control @if ($errors->has('correoElectronico')) is-invalid @endif"
                             id="correoElectronico"
+                            wire:model="correoElectronico"
                             placeholder="example@unu.edu.pe"
                         >
+                        @error('correoElectronico')
+                            <span class="form-text text-danger">
+                                {{ $message }}
+                            </span>
+                        @enderror
                     </div>
                     <div class="col-md-12">
                         <label class="form-label" for="contrasena">
@@ -50,8 +56,9 @@
                         >
                             <input
                                 x-bind:type="modoPassword"
-                                class="form-control"
+                                class="form-control @if ($errors->has('contrasena')) is-invalid @endif"
                                 id="contrasena"
+                                wire:model="contrasena"
                                 placeholder="********"
                             >
                             <div class="input-group-text">

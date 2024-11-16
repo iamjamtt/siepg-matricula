@@ -1,68 +1,70 @@
 <?php
 
-namespace App\Models\Matricula;
+namespace App\Models;
 
-use App\Models\CursoProgramaPlan;
-use App\Models\Docente;
-use App\Models\ProgramaProcesoGrupo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class MatriculaCurso extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
-    protected $table = 'tbl_matricula_curso';
     protected $primaryKey = 'id_matricula_curso';
+    protected $table = 'matricula_curso';
     protected $fillable = [
         'id_matricula_curso',
         'id_matricula',
         'id_curso_programa_plan',
+        'id_admision',
         'id_programa_proceso_grupo',
-        'id_docente',
-        'periodo',
-        'es_acta_adicional',
-        'es_acta_reingreso',
-        'es_acta_incorporacion',
-        'nota_evaluacion_permanente',
-        'nota_evaluacion_medio_curso',
-        'nota_evaluacion_final',
-        'nota_promedio_final',
-        'nota_observacion',
-        'fecha_ingreso_nota',
-        'estado',
-        'activo',
-        'subsanacion_nota',
-        'subsanacion_estado'
-    ];
-    public $timestamps = false;
-    protected $casts = [
-        'fecha_ingreso_nota' => 'date',
-        'activo' => 'boolean'
+        'matricula_curso_fecha_creacion',
+        'matricula_curso_estado',
+        'matricula_curso_activo',
+        'acta_adicional',
+        'acta_reingreso',
+        'acta_reincorporacion'
     ];
 
+    // matricula
     public function matricula()
     {
-        return $this->belongsTo(Matricula::class, 'id_matricula', 'id_matricula');
+        return $this->belongsTo(Matricula::class, 'id_matricula');
     }
 
-    public function cursoProgramaPlan()
+    // curso programa plan
+    public function curso_programa_plan()
     {
-        return $this->belongsTo(CursoProgramaPlan::class, 'id_curso_programa_plan', 'id_curso_programa_plan');
+        return $this->belongsTo(CursoProgramaPlan::class, 'id_curso_programa_plan');
     }
 
-    public function programaProcesoGrupo()
+    // admision
+    public function admision()
     {
-        return $this->belongsTo(ProgramaProcesoGrupo::class, 'id_programa_proceso_grupo', 'id_programa_proceso_grupo');
+        return $this->belongsTo(Admision::class, 'id_admision');
     }
 
-    public function docente()
+    // programa proceso grupo
+    public function programa_proceso_grupo()
     {
-        return $this->belongsTo(Docente::class, 'id_docente', 'id_docente');
+        return $this->belongsTo(ProgramaProcesoGrupo::class, 'id_programa_proceso_grupo');
     }
 
-    public function matriculaCursos()
-    {
-        return $this->hasMany(MatriculaCurso::class, 'id_matricula', 'id_matricula');
-    }
+    // protected static function boot() {
+    //     parent::boot();
+
+    //     static::creating(function ($model) {
+    //         $model->created_by = auth()->id();
+    //     });
+
+    //     static::updating(function ($model) {
+    //         $model->updated_by = auth()->id();
+    //     });
+
+    //     static::deleting(function ($model) {
+    //         $model->deleted_by = auth()->id();
+    //         $model->save();
+    //     });
+    // }
 }

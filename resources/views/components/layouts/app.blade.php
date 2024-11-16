@@ -169,7 +169,7 @@
             </div>
 
             <!-- Card User -->
-            <div class="dropdown sidebar-user">
+            <div class="dropdown sidebar-user mb-2">
                 <button
                     type="button"
                     class="btn material-shadow-none"

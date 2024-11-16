@@ -187,8 +187,10 @@
                         <span class="text-start">
                             <span class="d-block fw-medium sidebar-user-name-text">Jamt Mendoza</span>
                             <span class="d-block fs-14 sidebar-user-name-sub-text">
-                                <i class="ri ri-circle-fill fs-10 text-success align-baseline"></i>
-                                <span class="align-middle">En linea</span>
+                                <i class="ri ri-shield-check-line fs-6 text-warning align-baseline"></i>
+                                <span class="align-middle text-warning">
+                                    Administrador
+                                </span>
                             </span>
                         </span>
                     </span>

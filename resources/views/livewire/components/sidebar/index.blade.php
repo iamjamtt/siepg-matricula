@@ -16,7 +16,7 @@
         <x-sidebar.item
             name="Mis Matriculas"
             :route="route('matricula.index')"
-            routeIs="matricula.index"
+            routeIs="matricula.*"
             icon="ti ti-folders"
         />
 

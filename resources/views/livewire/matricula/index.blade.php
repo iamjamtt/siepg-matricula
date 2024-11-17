@@ -11,6 +11,12 @@
     </div>
     <div class="col-12 animate__animated animate__fadeIn">
         <div class="row g-4">
+            <div class="col-12">
+                <!-- Info Alert -->
+                <div class="alert alert-info border border-2 border-opacity-25 border-info alert-label-icon label-arrow material-shadow m-0" role="alert">
+                    <i class="ti ti-info-square-rounded label-icon"></i><strong>Información</strong> - Las matriculas realizadas se listan a continuación. En caso de no encontrar ninguna matricula, puede generar una nueva matricula.
+                </div>
+            </div>
             <div class="col-md-6">
                 <div class="d-flex justify-content-end mb-3">
                     <button type="button" class="btn btn-success fs-11">

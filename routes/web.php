@@ -14,7 +14,7 @@ Route::get('/', InicioIndex::class)
     ->middleware('auth')
     ->name('inicio.index');
 
-Route::get('/matricula', MatriculaIndex::class)
+Route::get('/mis-matriculas', MatriculaIndex::class)
     ->middleware('auth')
     ->name('matricula.index');
 

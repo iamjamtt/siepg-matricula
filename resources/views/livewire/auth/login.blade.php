@@ -66,8 +66,8 @@
                                     class="link-secondary cursor-pointer"
                                     x-on:click="modoPassword == 'password' ? modoPassword = 'text' : modoPassword = 'password'"
                                 >
-                                    <x-icon.eye x-show="modoPassword == 'password'" x-cloak />
-                                    <x-icon.eye-off x-show="modoPassword == 'text'" x-cloak />
+                                    <i class="ti ti-eye fs-4 align-middle" x-show="modoPassword == 'password'" x-cloak></i>
+                                    <i class="ti ti-eye-off fs-4 align-middle" x-show="modoPassword == 'text'" x-cloak></i>
                                 </a>
                             </div>
                         </div>

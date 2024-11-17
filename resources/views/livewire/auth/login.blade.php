@@ -10,7 +10,7 @@
                 "
             ></div>
         </div>
-        <div class="col-12 col-lg-6 col-xl-5 d-flex flex-column justify-content-center">
+        <div class="col-12 col-lg-6 col-xl-5 d-flex flex-column justify-content-center animate__animated animate__fadeIn">
             <div
                 class="container py-5 px-3 px-lg-5 d-flex flex-column justify-content-center align-items-center"
                 style="max-width: 500px;"

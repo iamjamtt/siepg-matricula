@@ -1,12 +1,12 @@
 <div class="row">
-    <div class="col-12">
+    <div class="col-12 animate__animated animate__fadeIn">
         <x-page-title title="Inicio">
             <x-page-title.item active>
                 Inicio
             </x-page-title.item>
         </x-page-title>
     </div>
-    <div class="col-12">
+    <div class="col-12 animate__animated animate__fadeIn">
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="row g-0">

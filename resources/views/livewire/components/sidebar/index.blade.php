@@ -7,17 +7,17 @@
             name="Inicio"
             :route="route('inicio.index')"
             routeIs="inicio.index"
-            icon="ri-home-6-line"
+            icon="ti ti-smart-home"
         />
 
         <x-sidebar.title icon="ri-more-fill" class="mt-2">
             Otros
         </x-sidebar.title>
         <x-sidebar.item
-            name="Matricula"
-            route="#"
+            name="Mis Matriculas"
+            :route="route('matricula.index')"
             routeIs="matricula.index"
-            icon="ri-folder-5-line"
+            icon="ti ti-folders"
         />
 
         {{-- <x-sidebar.item
